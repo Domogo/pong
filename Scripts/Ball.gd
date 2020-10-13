@@ -4,16 +4,18 @@ var dx = 100
 var dy = 0
 var speed = 150
 var dy_range = 100
+var playing = false
 
 func _ready():
 	pass
 
 
 func _physics_process(delta):
-	check_point_scored()
-	change_dy_on_wall_hit()
-	self.rotation = 0
-	self.linear_velocity = Vector2(dx, dy) * delta * speed
+	if playing:
+		check_point_scored()
+		change_dy_on_wall_hit()
+		self.rotation = 0
+		self.linear_velocity = Vector2(dx, dy) * delta * speed
 
 
 func _ball_hit_paddle(_body):
@@ -33,3 +35,7 @@ func check_point_scored():
 		print("score p2")
 	if self.position.x >= 1000:
 		print("score p1")
+
+
+func set_playing(playing):
+	self.playing = playing

@@ -6,6 +6,7 @@
 extents = Vector2( 10, 15 )
 
 [node name="Ball" type="RigidBody2D"]
+position = Vector2( 500, 300 )
 gravity_scale = 0.0
 contacts_reported = 5
 contact_monitor = true
