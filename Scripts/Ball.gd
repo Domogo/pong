@@ -12,7 +12,6 @@ func _ready():
 
 func _physics_process(delta):
 	if playing:
-		check_point_scored()
 		change_dy_on_wall_hit()
 		self.rotation = 0
 		self.linear_velocity = Vector2(dx, dy) * delta * speed
@@ -30,11 +29,6 @@ func change_dy_on_wall_hit():
 		dy = rand_range(-dy_range, 0)
 
 
-func check_point_scored():
-	if self.position.x <= 0:
-		print("score p2")
-	if self.position.x >= 1000:
-		print("score p1")
 
 
 func set_playing(playing):
