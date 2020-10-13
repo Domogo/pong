@@ -87,6 +87,7 @@ func handle_score_event():
 		display_message()
 		playing = false
 		score_event = false
+		$ScoreSound.play()
 
 
 func remove_ball():

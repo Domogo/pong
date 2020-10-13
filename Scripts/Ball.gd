@@ -24,6 +24,7 @@ func _ball_hit_paddle(_body):
 		speed += 5
 	if y_range < 200:
 		y_range += 5
+	$PaddleHitSound.play()
 
 
 func change_dy_on_wall_hit():
