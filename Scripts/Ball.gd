@@ -3,7 +3,7 @@ extends RigidBody2D
 var dx = 100
 var dy = 0
 var speed = 150
-var dy_range = 100
+var y_range = 100
 var playing = false
 
 func _ready():
@@ -19,17 +19,21 @@ func _physics_process(delta):
 
 func _ball_hit_paddle(_body):
 	dx *= -1
-	dy = rand_range(-dy_range, dy_range)
+	dy = rand_range(-y_range, y_range)
+	if speed < 300:
+		speed += 5
+	if y_range < 200:
+		y_range += 5
 
 
 func change_dy_on_wall_hit():
 	if self.position.y <= 0:
-		dy = rand_range(0, dy_range)
+		dy = rand_range(0, y_range)
 	if self.position.y >= 600:
-		dy = rand_range(-dy_range, 0)
+		dy = rand_range(-y_range, 0)
 
 
 
 
-func set_playing(playing):
-	self.playing = playing
+func set_playing(_playing):
+	playing = _playing

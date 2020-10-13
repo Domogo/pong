@@ -34,7 +34,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayMessage" type="Label" parent="."]
+[node name="DisplayMessage" type="Label" parent="."]
 margin_left = 226.0
 margin_top = 500.0
 margin_bottom = 556.0
